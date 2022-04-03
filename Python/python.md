@@ -12,11 +12,11 @@ Just for fun, try reading over the code below and predicting what it's going to 
 
 Then click the "output" button to see the results of our program.
 
-``# 1 no Exercício em lesson1.py``
+``# 1 in the lesson1.py exercise``
 
 There's a lot to unpack here! This silly program demonstrates many important aspects of what Python code looks like and how it works. Let's review the code from top to bottom.
 
-``# 2 no Exercício em lesson1.py``
+``# 2 in the lesson1.py exercise``
 
 **Variable assignment:** Here we create a variable called spam_amount and assign it the value of 0 using =, which is called the assignment operator.
 
@@ -25,11 +25,11 @@ There's a lot to unpack here! This silly program demonstrates many important asp
 - we don't need to "declare" spam_amount before assigning to it
 - we don't need to tell Python what type of value spam_amount is going to refer to. In fact, we can even go on to reassign spam_amount to refer to a different sort of thing like a string or a boolean.
 
-``# 3 no Exercício em lesson1.py``
+``# 3 in the lesson1.py exercise``
 
 **Function calls:** print is a Python function that displays the value passed to it on the screen. We call functions by putting parentheses after their name, and putting the inputs (or arguments) to the function in those parentheses.
 
-``# 4 no Exercício em lesson1.py``
+``# 4 in the lesson1.py exercise``
 
 The first line above is a **comment**. In Python, comments begin with the # symbol.
 
@@ -37,7 +37,7 @@ Next we see an example of reassignment. Reassigning the value of an existing var
 
 In this case, the value we're assigning to spam_amount involves some simple arithmetic on its previous value. When it encounters this line, Python evaluates the expression on the right-hand-side of the = (0 + 4 = 4), and then assigns that value to the variable on the left-hand-side.
 
-``# 5 no Exercício em lesson1.py``
+``# 5 in the lesson1.py exercise``
 
 We won't talk much about "conditionals" until later, but, even if you've never coded before, you can probably guess what this does. Python is prized for its readability and the simplicity.
 
@@ -55,7 +55,7 @@ This code snippet is also our first sighting of a **string** in Python:
 
 Strings can be marked either by double or single quotation marks. (But because this particular string contains a single-quote character, we might confuse Python by trying to surround it with single-quotes, unless we're careful.)
 
-``# 6 no Exercício em lesson1.py``
+``# 6 in the lesson1.py exercise``
 
 The * operator can be used to multiply two numbers (3 * 3 evaluates to 9), but we can also multiply a string by a number, to get a version that's been repeated that many times. Python offers a number of cheeky little time-saving tricks like this where operators like * and + have a different meaning depending on what kind of thing they're applied to. (The technical term for this is operator overloading.)
 
@@ -63,19 +63,19 @@ The * operator can be used to multiply two numbers (3 * 3 evaluates to 9), but w
 
 We've already seen an example of a variable containing a number above:
 
-``# 7 no Exercício em lesson1.py``
+``# 7 in the lesson1.py exercise``
 
 "Number" is a fine informal name for the kind of thing, but if we wanted to be more technical, we could ask Python how it would describe the type of thing that spam_amount is:
 
-``# 8 no Exercício em lesson1.py``
+``# 8 in the lesson1.py exercise``
 
 It's an int - short for integer. There's another sort of number we commonly encounter in Python:
 
-``# 9 no Exercício em lesson1.py``
+``# 9 in the lesson1.py exercise``
 
 A float is a number with a decimal place - very useful for representing things like weights or proportions.
 
-type() is the second built-in function we've seen (after print()), and it's another good one to remember. It's very useful to be able to ask Python "what kind of thing is this?".
+type( ) is the second built-in function we've seen (after print( )), and it's another good one to remember. It's very useful to be able to ask Python "what kind of thing is this?".
 
 A natural thing to want to do with numbers is perform arithmetic. We've seen the + operator for addition, and the * operator for multiplication. Python also has us covered for the rest of the basic buttons on your calculator:
 
@@ -92,13 +92,13 @@ A natural thing to want to do with numbers is perform arithmetic. We've seen the
 
 One interesting observation here is that, whereas your calculator probably just has one button for division, Python can do two kinds. "True division" is basically what your calculator does:
 
-``# 10 no Exercício em lesson1.py``
+``# 10 in the lesson1.py exercise``
 
 It always gives us a float.
 
 The // operator gives us a result that's rounded down to the next integer.
 
-``# 11 no Exercício em lesson1.py``
+``# 11 in the lesson1.py exercise``
 
 Can you think of where this would be useful? You'll see an example soon in the coding challenges.
 
@@ -107,31 +107,31 @@ The arithmetic we learned in primary school has conventions about the order in w
 
 Python follows similar rules about which calculations to perform first. They're mostly pretty intuitive.
 
-``# 12 no Exercício em lesson1.py``
+``# 12 in the lesson1.py exercise``
 
-``# 13 no Exercício em lesson1.py``
+``# 13 in the lesson1.py exercise``
 
 Sometimes the default order of operations isn't what we want:
 
-``# 14 no Exercício em lesson1.py``
+``# 14 in the lesson1.py exercise``
 
 Parentheses are useful here. You can add them to force Python to evaluate sub-expressions in whatever order you want.
 
-``# 15 no Exercício em lesson1.py``
+``# 15 in the lesson1.py exercise``
 
 ##### Builtin functions for working with numbers
 
 *min* and *max* return the minimum and maximum of their arguments, respectively...
 
-``# 16 no Exercício em Lesson1.py``
+``# 16 in the lesson1.py exercise``
 
 *abs* returns the absolute value of an argument:
 
-``# 17 no Exercício em lesson1.py``
+``# 17 in the lesson1.py exercise``
 
 In addition to being the names of Python's two main numerical types, int and float can also be called as functions which convert their arguments to the corresponding type:
 
-``# 18 no Exercício em lesson1.py``
+``# 18 in the lesson1.py exercise``
 
 
 ## Lesson 2
@@ -150,7 +150,7 @@ The *help( )* function is possibly the most important Python function you can le
 
 Here is an example:
 
-``# 1 no Exercício em lesson2.py``
+``# 1 in the lesson2.py exercise``
 
 *help( )* displays two things:
 
@@ -161,7 +161,7 @@ Here is an example:
 
 What happens if we invoke help on a call to the function round()? Unhide the output of the cell below to see.
 
-``# 2 no Exercício em lesson2.py``
+``# 2 in the lesson2.py exercise``
 
 Python evaluates an expression like this from the inside out. First it calculates the value of round(-2.01), then it provides help on the output of that expression.
 
@@ -169,7 +169,7 @@ Python evaluates an expression like this from the inside out. First it calculate
 
 round is a very simple function with a short docstring. help shines even more when dealing with more complex, configurable functions like print. Don't worry if the following output looks inscrutable... for now, just see if you can pick anything new out from this help.
 
-``# 3 no Exercício em lesson2.py``
+``# 3 in the lesson2.py exercise``
 
 If you were looking for it, you might learn that print can take an argument called sep, and that this describes what we put between all the other arguments when we print them.
 
@@ -177,7 +177,7 @@ If you were looking for it, you might learn that print can take an argument call
 
 Builtin functions are great, but we can only get so far with them before we need to start defining our own functions. Below is a simple example.
 
-``# 4 no Exercício em lesson2.py``
+``# 4 in the lesson2.py exercise``
 
 This creates a function called *least_difference*, which takes three arguments, *a*, *b*, and *c*.
 
@@ -187,21 +187,22 @@ Functions start with a header introduced by the *def* keyword. The indented bloc
 
 Is it clear what *least_difference( )* does from the source code? If we're not sure, we can always try it out on a few examples:
 
-``# 5 no Exercício em lesson2.py``
+``# 5 in the lesson2.py exercise``
 
 Or maybe the *help( )* function can tell us something about it.
 
-``# 6 no Exercício em lesson2.py``
+``# 6 in the lesson2.py exercise``
 
 Python isn't smart enough to read my code and turn it into a nice English description. However, when I write a function, I can provide a description in what's called the *docstring*.
 
 #### Docstrings
 
-``# 7 no Exercício em lesson2.py``
+``# 7 in the lesson2.py exercise``
 
 The docstring is a triple-quoted string (which may span multiple lines) that comes immediately after the header of a function. When we call *help( )* on a function, it shows the docstring.
 
-``# 8 no Exercício em lesson2.py``
+``# 8 in the lesson2.py exercise``
+
 >**Aside:** The last two lines of the docstring are an example function call and result. (The >>> is a reference to the command prompt used in Python interactive shells.) Python doesn't run the example call - it's just there for the benefit of the reader. The convention of including 1 or more example calls in a function's docstring is far from universally observed, but it can be very effective at helping someone understand your function. For a real-world example, see this docstring for the numpy function *np.eye*.
 
 Good programmers use docstrings unless they expect to throw away the code soon after it's used (which is rare). So, you should start writing docstrings, too!
@@ -209,35 +210,35 @@ Good programmers use docstrings unless they expect to throw away the code soon a
 ### Functions that don't return
 What would happen if we didn't include the *return* keyword in our function?
 
-``# 9 no Exercício em lesson2.py``
+``# 9 in the lesson2.py exercise``
 
 Python allows us to define such functions. The result of calling them is the special value None. (This is similar to the concept of "null" in other languages.)
 
 Without a *return* statement, *least_difference* is completely pointless, but a function with side effects may do something useful without returning anything. We've already seen two examples of this: *print( )* and *help( )* don't return anything. We only call them for their side effects (putting some text on the screen). Other examples of useful side effects include writing to a file, or modifying an input.
 
 
-``# 10 no Exercício em lesson2.py``
+``# 10 in the lesson2.py exercise``
 
 ### Default arguments
 
 When we called *help(print)*, we saw that the print function has several optional arguments. For example, we can specify a value for *sep* to put some special string in between our printed arguments:
 
-``# 11 no Exercício em lesson2.py``
+``# 11 in the lesson2.py exercise``
 
 But if we don't specify a value, *sep* is treated as having a default value of ' ' (a single space).
 
 
-``# 12 no Exercício em lesson2.py``
+``# 12 in the lesson2.py exercise``
 
 Adding optional arguments with default values to the functions we define turns out to be pretty easy:
 
-``# 13 no Exercício em lesson2.py``
+``# 13 in the lesson2.py exercise``
 
 ### Functions Applied to Functions
 
 Here's something that's powerful, though it can feel very abstract at first. You can supply functions as arguments to other functions. Some example may make this clearer:
 
-``# 14 no Exercício em lesson2.py``
+``# 14 in the lesson2.py exercise``
 
 Functions that operate on other functions are called "higher-order functions." You probably won't write your own for a little while. But there are higher-order functions built into Python that you might find useful to call.
 
@@ -245,4 +246,7 @@ Here's an interesting example using the max function.
 
 By default, *max* returns the largest of its arguments. But if we pass in a function using the optional *key* argument, it returns the argument *x* that maximizes *key(x)* (aka the 'argmax').
 
-``# 15 no Exercício em lesson2.py``
+``# 15 in the lesson2.py exercise``
+
+
+## Lesson 3
