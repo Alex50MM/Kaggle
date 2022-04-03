@@ -1,4 +1,4 @@
-# Apostila Python no Kaggle
+# Course Python on Kaggle
 
 ## Lesson 1
 This course covers the key Python skills you’ll need so you can start using Python for data science.
