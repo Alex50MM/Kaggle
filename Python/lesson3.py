@@ -62,31 +62,42 @@ print(True or True and False)
 
 
 # 8
+def inspect(x):
+    if x == 0:
+        print(x,'is zero.')
+    elif x > 0:
+        print(x, 'is positive.')
+    elif x < 0:
+        print(x, 'is negative.')
+    else:
+        print(x, "is unlike anything i've ever seen...")
 
+inspect(0)
+inspect(-15)
 
 
 # 9
+def f(x):
+    if x > 0:
+        print('Only printed when x is positive; x =', x)
+        print('Also only printed when x is positive; x =', x)
+    print('Always printed, regardless of x value; x =', x)
 
+f(1)
+f(0)
 
 
 # 10
-
+print(bool(1)) # always numbers are treated as True, except 0
+print(bool(0))
+print(bool('asf')) # all strings are treated as True, except the empty string ''
+''
+print(bool('')) # generally empty sequences (strings, lists, and other types
+# we've yet to see like list ) and tuples) and 'falsey' and the rest are 'truthy'
 
 
 # 11
-
-
-
-# 12
-
-
-
-# 13
-
-
-
-# 14
-
-
-
-# 15
+if 0:
+    print(0)
+elif 'spam':
+    print('spam')
