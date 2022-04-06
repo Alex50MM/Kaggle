@@ -252,6 +252,8 @@ By default, *max* returns the largest of its arguments. But if we pass in a func
 ## Lesson 3
 ### Booleans and Conditionals
 
+Using booleans for branching logic
+
 #### Booleans
 
 Python has a type of variable called *bool*. It has two possible values: *True* and *False*.
@@ -345,7 +347,7 @@ Conditional statements, often referred to as if-then statements, let you control
 
 The *if* and *else* keywords are often used in other languages; its more unique keyword is *elif*, a contraction of "else if". In these conditional clauses, *elif* and *else* blocks are optional; additionally, you can include as many *elif* statements as you would like.
 
-Note especially the use of colons (:) and whitespace to denote separate blocks of code. This is similar to what happens when we define a function - the function header ends with :, and the following line is indented with 4 spaces. All subsequent indented lines belong to the body of the function, until we encounter an unindented line, ending the function definition.
+Note especially the use of colons (:) and whitespace to denote separate blocks of code. This is similar to what happens when we define a function - the function header ends with : , and the following line is indented with 4 spaces. All subsequent indented lines belong to the body of the function, until we encounter an unindented line, ending the function definition.
 
 
 ``# 9 in the lesson3.py exercise``
