@@ -415,7 +415,7 @@ What are the first three planets? We can answer this question using slicing:
 
 ``# 9 in the lesson4.py exercise``
 
-*planets[0:3]* is our way of asking for the elements of planets starting from index 0 and continuing up to but not including index 3.
+*planets[0:3]* is our way of asking for the elements of *planets* starting from index 0 and continuing up to but not including index 3.
 
 The starting and ending indices are both optional. If I leave out the start index, it's assumed to be 0. So I could rewrite the expression above as:
 
@@ -474,7 +474,7 @@ For example, numbers in Python carry around an associated variable called *imag*
 
 ``# 20 in the lesson4.py exercise``
 
-The things an object carries around can also include functions. A function attached to an object is called a *method*. (Non-function things attached to an object, such as *imag*, are called attributes).
+The things an object carries around can also include functions. A function attached to an object is called a **method**. (Non-function things attached to an object, such as *imag*, are called attributes).
 
 For example, numbers have a method called *bit_length*. Again, we access it using dot syntax:
 
@@ -528,7 +528,7 @@ At what index does Pluto occur?
 
 Oh, that's right...
 
-To avoid unpleasant surprises like this, we can use the in operator to determine whether a list contains a particular value:
+To avoid unpleasant surprises like this, we can use the *in* operator to determine whether a list contains a particular value:
 
 ``# 31 in the lesson4.py exercise``
 
@@ -538,18 +538,19 @@ There are a few more interesting list methods we haven't covered. If you want to
 
 ``# 33 in the lesson4.py exercise``
 
-Click the "output" button to see the full help page. Lists have lots of methods with weird-looking names like *__eq__* and *__iadd__*. Don't worry too much about these for now. (You'll probably never call such methods directly. But they get called behind the scenes when we use syntax like indexing or comparison operators.) The most interesting methods are toward the bottom of the list (*append*, *clear*, *copy*, etc.).
+Lists have lots of methods with weird-looking names like *__eq__* and *__iadd__*. Don't worry too much about these for now. (You'll probably never call such methods directly. But they get called behind the scenes when we use syntax like indexing or comparison operators.) The most interesting methods are toward the bottom of the list (*append*, *clear*, *copy*, etc.).
 
-``# 34 in the lesson4.py exercise``
 
 #### Tuples
 Tuples are almost exactly the same as lists. They differ in just two ways.
 
-*1:* The syntax for creating them uses parentheses instead of square brackets
+**1:** The syntax for creating them uses parentheses instead of square brackets
+
+``# 34 in the lesson4.py exercise``
 
 ``# 35 in the lesson4.py exercise``
 
-*2:* They cannot be modified (they are _immutable_).
+**2:** They cannot be modified (they are _immutable_).
 
 ``# 36 in the lesson4.py exercise``
 
