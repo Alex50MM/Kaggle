@@ -576,241 +576,454 @@ Finally we have some insight into the classic Stupid Python Trick™ for swappin
 
 
 ## Lesson 5
+
 ### Loops and List Comprehensions
+For and while loops, and a much-loved Python feature: list comprehensions
 
 #### Loops
 
-Python has a type of variable called *bool*. It has two possible values: *True* and *False*.
+Loops are a way to repeatedly execute some code. Here's an example:
 
 ``# 1 in the lesson5.py exercise``
 
-``# 5 in the lesson4.py exercise``
+The *for* loop specifies
 
-``# 6 in the lesson4.py exercise``
+* the variable name to use (in this case, *planet*)
+* the set of values to loop over (in this case, *planets*)
 
-``# 7 in the lesson4.py exercise``
+You use the word "*in*" to link them together.
 
-``# 8 in the lesson4.py exercise``
+The object to the right of the "*in*" can be any object that supports iteration. Basically, if it can be thought of as a group of things, you can probably loop over it. In addition to lists, we can iterate over the elements of a tuple:
 
-``# 9 in the lesson4.py exercise``
+``# 2 in the lesson5.py exercise``
 
-``# 10 in the lesson4.py exercise``
+You can even loop through each character in a string:
 
-``# 11 in the lesson4.py exercise``
+``# 3 in the lesson5.py exercise``
 
-``# 12 in the lesson4.py exercise``
+**range( )**
 
-``# 13 in the lesson4.py exercise``
+*range( )* is a function that returns a sequence of numbers. It turns out to be very useful for writing loops.
 
-``# 14 in the lesson4.py exercise``
+For example, if we want to repeat some action 5 times:
 
-``# 15 in the lesson4.py exercise``
+``# 4 in the lesson5.py exercise``
 
-``# 16 in the lesson4.py exercise``
+*while* ***loops***
 
-``# 17 in the lesson4.py exercise``
+The other type of loop in Python is a *while* loop, which iterates until some condition is met:
 
-``# 18 in the lesson4.py exercise``
+``# 5 in the lesson5.py exercise``
 
-``# 19 in the lesson4.py exercise``
+The argument of the *while* loop is evaluated as a boolean statement, and the loop is executed until the statement evaluates to False.
 
-``# 20 in the lesson4.py exercise``
+### List comprehensions
+List comprehensions are one of Python's most beloved and unique features. The easiest way to understand them is probably to just look at a few examples:
 
-``# 21 in the lesson4.py exercise``
+``# 6 in the lesson5.py exercise``
 
-``# 22 in the lesson4.py exercise``
+Here's how we would do the same thing without a list comprehension:
 
-``# 23 in the lesson4.py exercise``
+``# 7 in the lesson5.py exercise``
 
-``# 24 in the lesson4.py exercise``
+We can also add an *if* condition:
 
-``# 25 in the lesson4.py exercise``
+``# 8 in the lesson5.py exercise``
 
-``# 26 in the lesson4.py exercise``
+(If you're familiar with SQL, you might think of this as being like a "WHERE" clause)
 
-``# 27 in the lesson4.py exercise``
+Here's an example of filtering with an *if* condition and applying some transformation to the loop variable:
 
-``# 28 in the lesson4.py exercise``
+``# 9 in the lesson5.py exercise``
 
-``# 29 in the lesson4.py exercise``
+People usually write these on a single line, but you might find the structure clearer when it's split up over 3 lines:
 
-``# 30 in the lesson4.py exercise``
+``# 10 in the lesson5.py exercise``
 
-``# 31 in the lesson4.py exercise``
+(Continuing the SQL analogy, you could think of these three lines as SELECT, FROM, and WHERE)
 
-``# 32 in the lesson4.py exercise``
+The expression on the left doesn't technically have to involve the loop variable (though it'd be pretty unusual for it not to). What do you think the expression below will evaluate to? Press the 'output' button to check.
 
-``# 33 in the lesson4.py exercise``
+``# 11 in the lesson5.py exercise``
 
-``# 34 in the lesson4.py exercise``
+List comprehensions combined with functions like *min*, *max*, and *sum* can lead to impressive one-line solutions for problems that would otherwise require several lines of code.
 
-``# 35 in the lesson4.py exercise``
+For example, compare the following two cells of code that do the same thing.
 
-``# 36 in the lesson4.py exercise``
+``# 12 in the lesson5.py exercise``
 
-``# 37 in the lesson4.py exercise``
+Here's a solution using a list comprehension:
 
-``# 38 in the lesson4.py exercise``
+``# 13 in the lesson5.py exercise``
 
-``# 39 in the lesson4.py exercise``
+Much better, right?
+
+Well if all we care about is minimizing the length of our code, this third solution is better still!
+
+``# 14 in the lesson5.py exercise``
+
+Which of these solutions is the "best" is entirely subjective. Solving a problem with less code is always nice, but it's worth keeping in mind the following lines from The Zen of Python:
+
+>Readability counts.<p>
+Explicit is better than implicit.
+
+So, use these tools to make compact readable programs. But when you have to choose, favor code that is easy for others to understand.
 
 
 
 ## Lesson 6
 ### Strings and Dictionaries
+Working with strings and dictionaries, two fundamental Python data types
+
+This lesson will cover two essential Python types: **strings** and **dictionaries**.
 
 #### Strings
+One place where the Python language really shines is in the manipulation of strings. This section will cover some of Python's built-in string methods and formatting operations.
 
-Python has a type of variable called *bool*. It has two possible values: *True* and *False*.
+Such string manipulation patterns come up often in the context of data science work.
+
+
+##### String Syntax
+
+You've already seen plenty of strings in examples during the previous lessons, but just to recap, strings in Python can be defined using either single or double quotations. They are functionally equivalent.
 
 ``# 1 in the lesson6.py exercise``
 
-``# 5 in the lesson4.py exercise``
+Double quotes are convenient if your string contains a single quote character (e.g. representing an apostrophe).
 
-``# 6 in the lesson4.py exercise``
+Similarly, it's easy to create a string that contains double-quotes if you wrap it in single quotes:
 
-``# 7 in the lesson4.py exercise``
 
-``# 8 in the lesson4.py exercise``
+``# 2 in the lesson6.py exercise``
 
-``# 9 in the lesson4.py exercise``
+If we try to put a single quote character inside a single-quoted string, Python gets confused:
 
-``# 10 in the lesson4.py exercise``
+``# 3 in the lesson6.py exercise``
 
-``# 11 in the lesson4.py exercise``
+We can fix this by "escaping" the single quote with a backslash.
 
-``# 12 in the lesson4.py exercise``
+``# 4 in the lesson6.py exercise``
 
-``# 13 in the lesson4.py exercise``
+The table below summarizes some important uses of the backslash character.
 
-``# 14 in the lesson4.py exercise``
 
-``# 15 in the lesson4.py exercise``
+| What you type | What you get | Exemple | print (exemple) |
+| --------- |---------|----------|-----------|
+| \' | '| 'What\ 's up?' | What's up? |
+| '\" | " | "That's \ "cool\ "" | That's "cool" |
+| \\ | \ | "Look, a mountain: / \ \ " | Look, a mountain: / \ |
+| \n |  | "1\n2 3" | 1 |
+|  | enter |  | 2 3 |
 
-``# 16 in the lesson4.py exercise``
+The last sequence, *\n*, represents the newline character. It causes Python to start a new line.
 
-``# 17 in the lesson4.py exercise``
+``# 5 in the lesson6.py exercise``
 
-``# 18 in the lesson4.py exercise``
+In addition, Python's triple quote syntax for strings lets us include newlines literally (i.e. by just hitting 'Enter' on our keyboard, rather than using the special '\n' sequence). We've already seen this in the docstrings we use to document our functions, but we can use them anywhere we want to define a string.
 
-``# 19 in the lesson4.py exercise``
+``# 6 in the lesson6.py exercise``
 
-``# 20 in the lesson4.py exercise``
+The *print( )* function automatically adds a newline character unless we specify a value for the keyword argument *end* other than the default value of *'\n'*:
+
+``# 7 in the lesson6.py exercise``
+
+##### Strings are sequences
+
+Strings can be thought of as sequences of characters. Almost everything we've seen that we can do to a list, we can also do to a string.
+
+``# 8 in the lesson6.py exercise``
+
+``# 9 in the lesson6.py exercise``
+
+``# 10 in the lesson6.py exercise``
+
+``# 11 in the lesson6.py exercise``
+
+But a major way in which they differ from lists is that they are immutable. We can't modify them.
+
+``# 12 in the lesson6.py exercise``
+
+##### String Methods
+
+Like *list*, the type *str* has lots of very useful methods. I'll show just a few examples here.
+
+``# 13 in the lesson6.py exercise``
+
+``# 14 in the lesson6.py exercise``
+
+``# 15 in the lesson6.py exercise``
+
+``# 16 in the lesson6.py exercise``
+
+``# 17 in the lesson6.py exercise``
+
+###### Going between strings and lists: *.split( )* and *.join( )*
+
+*str.split( )* turns a string into a list of smaller strings, breaking on whitespace by default. This is super useful for taking you from one big string to a list of words.
+
+``# 18 in the lesson6.py exercise``
+
+Occasionally you'll want to split on something other than whitespace:
+
+``# 19 in the lesson6.py exercise``
+
+*str.join( )* takes us in the other direction, sewing a list of strings up into one long string, using the string it was called on as a separator.
+
+``# 20 in the lesson6.py exercise``
 
 ``# 21 in the lesson4.py exercise``
 
-``# 22 in the lesson4.py exercise``
+###### Building strings with *.format( )*
 
-``# 23 in the lesson4.py exercise``
+Python lets us concatenate strings with the + operator.
 
-``# 24 in the lesson4.py exercise``
+``# 22 in the lesson6.py exercise``
 
-``# 25 in the lesson4.py exercise``
+If we want to throw in any non-string objects, we have to be careful to call *str( )* on them first
 
-``# 26 in the lesson4.py exercise``
+``# 23 in the lesson6.py exercise``
 
-``# 27 in the lesson4.py exercise``
+``# 24 in the lesson6.py exercise``
 
-``# 28 in the lesson4.py exercise``
+This is getting hard to read and annoying to type. *str.format( )* to the rescue.
 
-``# 29 in the lesson4.py exercise``
+``# 25 in the lesson6.py exercise``
 
-``# 30 in the lesson4.py exercise``
+So much cleaner! We call *.format( )* on a "format string", where the Python values we want to insert are represented with *{ }* placeholders.
 
-``# 31 in the lesson4.py exercise``
+Notice how we didn't even have to call *str( )* to convert *position* from an int. *format( )* takes care of that for us.
 
-``# 32 in the lesson4.py exercise``
+If that was all that *format( )* did, it would still be incredibly useful. But as it turns out, it can do a lot more. Here's just a taste:
 
-``# 33 in the lesson4.py exercise``
+``# 26 in the lesson6.py exercise``
 
-``# 34 in the lesson4.py exercise``
+``# 27 in the lesson6.py exercise``
 
-``# 35 in the lesson4.py exercise``
+You could probably write a short book just on *str.format*, so I'll stop here, and point you to [pyformat.info](https://pyformat.info) and [the official docs](https://docs.python.org/3/library/string.html#formatstrings) for further reading.
 
-``# 36 in the lesson4.py exercise``
+#### Dictionaries
 
-``# 37 in the lesson4.py exercise``
+Dictionaries are a built-in Python data structure for mapping keys to values.
 
-``# 38 in the lesson4.py exercise``
+``# 28 in the lesson6.py exercise``
 
-``# 39 in the lesson4.py exercise``
+In this case *'one'*, *'two'*, and *'three'* are the **keys**, and 1, 2 and 3 are their corresponding values.
+
+Values are accessed via square bracket syntax similar to indexing into lists and strings.
+
+``# 29 in the lesson6.py exercise``
+
+We can use the same syntax to add another key, value pair
+
+``# 30 in the lesson6.py exercise``
+
+Or to change the value associated with an existing key
+
+``# 31 in the lesson6.py exercise``
+
+Python has dictionary comprehensions with a syntax similar to the list comprehensions we saw in the previous tutorial.
+
+``# 32 in the lesson6.py exercise``
+
+The *in* operator tells us whether something is a key in the dictionary
+
+``# 33 in the lesson6.py exercise``
+
+``# 34 in the lesson6.py exercise``
+
+A for loop over a dictionary will loop over its keys
+
+``# 35 in the lesson6.py exercise``
+
+We can access a collection of all the keys or all the values with *dict.keys( )* and *dict.values( )*, respectively.
+
+``# 36 in the lesson6.py exercise``
+
+The very useful *dict.items( )* method lets us iterate over the keys and values of a dictionary simultaneously. (In Python jargon, an **item** refers to a key, value pair)
+
+``# 37 in the lesson6.py exercise``
+
+To read a full inventory of dictionaries' methods, click the "output" button below to read the full help page, or check out the [official online documentation](https://docs.python.org/3/library/stdtypes.html#dict).
+
+``# 38 in the lesson6.py exercise``
+
+``# 39 in the lesson6.py exercise``
 
 
 ## Lesson 7
 ### Working with External Libraries
 
-#### Booleans
+Imports, operator overloading, and survival tips for venturing into the world of external libraries
+
+#### Imports
 
 Python has a type of variable called *bool*. It has two possible values: *True* and *False*.
 
+In this tutorial, you will learn about **imports** in Python, get some tips for working with unfamiliar libraries (and the objects they return), and dig into **operator overloading**.
+
+#### Imports
+So far we've talked about types and functions which are built-in to the language.
+
+But one of the best things about Python (especially if you're a data scientist) is the vast number of high-quality custom libraries that have been written for it.
+
+Some of these libraries are in the "standard library", meaning you can find them anywhere you run Python. Other libraries can be easily added, even if they aren't always shipped with Python.
+
+Either way, we'll access this code with **imports**.
+
+We'll start our example by importing *math* from the standard library.
+
 ``# 1 in the lesson7.py exercise``
 
-``# 5 in the lesson4.py exercise``
+*math* is a module. A module is just a collection of variables (a namespace, if you like) defined by someone else. We can see all the names in *math* using the built-in function *dir( )*.
 
-``# 6 in the lesson4.py exercise``
+``# 2 in the lesson7.py exercise``
 
-``# 7 in the lesson4.py exercise``
+We can access these variables using dot syntax. Some of them refer to simple values, like *math.pi*:
 
-``# 8 in the lesson4.py exercise``
+``# 3 in the lesson7.py exercise``
 
-``# 9 in the lesson4.py exercise``
+But most of what we'll find in the module are functions, like *math.log*:
 
-``# 10 in the lesson4.py exercise``
+``# 4 in the lesson7.py exercise``
 
-``# 11 in the lesson4.py exercise``
+Of course, if we don't know what *math.log* does, we can call *help( )* on it:
 
-``# 12 in the lesson4.py exercise``
+``# 5 in the lesson7.py exercise``
 
-``# 13 in the lesson4.py exercise``
+We can also call *help( )* on the module itself. This will give us the combined documentation for all the functions and values in the module (as well as a high-level description of the module). Click the "output" button to see the whole *math* help page.
 
-``# 14 in the lesson4.py exercise``
+``# 6 in the lesson7.py exercise``
 
-``# 15 in the lesson4.py exercise``
+##### Other import syntax
+If we know we'll be using functions in *math* frequently we can import it under a shorter alias to save some typing (though in this case "math" is already pretty short).
 
-``# 16 in the lesson4.py exercise``
+``# 7 in the lesson7.py exercise``
 
-``# 17 in the lesson4.py exercise``
+>You may have seen code that does this with certain popular libraries like Pandas, Numpy, Tensorflow, or Matplotlib. For example, it's a common convention to *import numpy as np* and *import pandas as pd*.
 
-``# 18 in the lesson4.py exercise``
+The *as* simply renames the imported module. It's equivalent to doing something like:
 
-``# 19 in the lesson4.py exercise``
+``# 8 in the lesson7.py exercise``
 
-``# 20 in the lesson4.py exercise``
+Wouldn't it be great if we could refer to all the variables in the *math* module by themselves? i.e. if we could just refer to *pi* instead of *math.pi* or *mt.pi*? Good news: we can do that.
 
-``# 21 in the lesson4.py exercise``
+``# 9 in the lesson7.py exercise``
 
-``# 22 in the lesson4.py exercise``
+import * makes all the module's variables directly accessible to you (without any dotted prefix).
 
-``# 23 in the lesson4.py exercise``
+Bad news: some purists might grumble at you for doing this.
 
-``# 24 in the lesson4.py exercise``
+Worse: they kind of have a point.
 
-``# 25 in the lesson4.py exercise``
+``# 10 in the lesson7.py exercise``
 
-``# 26 in the lesson4.py exercise``
+What has happened? It worked before!
 
-``# 27 in the lesson4.py exercise``
+These kinds of "star imports" can occasionally lead to weird, difficult-to-debug situations.
 
-``# 28 in the lesson4.py exercise``
+The problem in this case is that the *math* and *numpy* modules both have functions called *log*, but they have different semantics. Because we import from *numpy* second, its *log* overwrites (or "shadows") the *log* variable we imported from *math*.
 
-``# 29 in the lesson4.py exercise``
+A good compromise is to import only the specific things we'll need from each module:
 
-``# 30 in the lesson4.py exercise``
+``# 11 in the lesson7.py exercise``
 
-``# 31 in the lesson4.py exercise``
+##### Submodules
+We've seen that modules contain variables which can refer to functions or values. Something to be aware of is that they can also have variables referring to other modules.
 
-``# 32 in the lesson4.py exercise``
+``# 12 in the lesson7.py exercise``
 
-``# 33 in the lesson4.py exercise``
+So if we import *numpy* as above, then calling a function in the *random* "submodule" will require two dots.
 
-``# 34 in the lesson4.py exercise``
+``# 13 in the lesson7.py exercise``
 
-``# 35 in the lesson4.py exercise``
+#### Oh the places you'll go, oh the objects you'll see
+So after 6 lessons, you're a pro with ints, floats, bools, lists, strings, and dicts (right?).
 
-``# 36 in the lesson4.py exercise``
+Even if that were true, it doesn't end there. As you work with various libraries for specialized tasks, you'll find that they define their own types which you'll have to learn to work with. For example, if you work with the graphing library *matplotlib*, you'll be coming into contact with objects it defines which represent Subplots, Figures, TickMarks, and Annotations. *pandas* functions will give you DataFrames and Series.
 
-``# 37 in the lesson4.py exercise``
+In this section, I want to share with you a quick survival guide for working with strange types.
 
-``# 38 in the lesson4.py exercise``
+#### Three tools for understanding strange objects
+In the cell above, we saw that calling a *numpy* function gave us an "array". We've never seen anything like this before (not in this course anyways). But don't panic: we have three familiar builtin functions to help us here.
 
-``# 39 in the lesson4.py exercise``
+**1: type( )** (what is this thing?)
+
+``# 14 in the lesson7.py exercise``
+
+**2: dir( )** (what can I do with it?)
+
+``# 15 in the lesson7.py exercise``
+
+``# 16 in the lesson7.py exercise``
+
+``# 17 in the lesson7.py exercise``
+
+**3: help( )** (tell me more)
+
+``# 18 in the lesson7.py exercise``
+
+``# 19 in the lesson7.py exercise``
+
+(Of course, you might also prefer to check out [the online docs](https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.ndarray.html).)
+
+##### Operator overloading
+What's the value of the below expression?
+
+``# 20 in the lesson7.py exercise``
+
+What a silly question. Of course it's an error.
+
+But what about...
+
+``# 21 in the lesson7.py exercise``
+
+We might think that Python strictly polices how pieces of its core syntax behave such as *+*, *<*, *in*, *==*, or square brackets for indexing and slicing. But in fact, it takes a very hands-off approach. When you define a new type, you can choose how addition works for it, or what it means for an object of that type to be equal to something else.
+
+The designers of lists decided that adding them to numbers wasn't allowed. The designers of *numpy* arrays went a different way (adding the number to each element of the array).
+
+Here are a few more examples of how *numpy* arrays interact unexpectedly with Python operators (or at least differently from lists).
+
+``# 22 in the lesson7.py exercise``
+
+``# 23 in the lesson7.py exercise``
+
+``# 24 in the lesson7.py exercise``
+
+``# 25 in the lesson7.py exercise``
+
+numpy's *ndarray* type is specialized for working with multi-dimensional data, so it defines its own logic for indexing, allowing us to index by a tuple to specify the index at each dimension.
+
+#### When does 1 + 1 not equal 2?
+Things can get weirder than this. You may have heard of (or even used) tensorflow, a Python library popularly used for deep learning. It makes extensive use of operator overloading.
+
+``# 26 in the lesson7.py exercise``
+
+*a + b* isn't 2, it is (to quote tensorflow's documentation)...
+
+>a symbolic handle to one of the outputs of an *Operation*. It does not hold the values of that operation's output, but instead provides a means of computing those values in a TensorFlow *tf.Session*.
+
+It's important just to be aware of the fact that this sort of thing is possible and that libraries will often use operator overloading in non-obvious or magical-seeming ways.
+
+Understanding how Python's operators work when applied to ints, strings, and lists is no guarantee that you'll be able to immediately understand what they do when applied to a tensorflow *Tensor*, or a numpy *ndarray*, or a pandas *DataFrame*.
+
+Once you've had a little taste of DataFrames, for example, an expression like the one below starts to look appealingly intuitive:
+
+>#Get the rows with population over 1m in South America
+df[(df['population'] > 10**6) & (df['continent'] == 'South America')]
+
+But why does it work? The example above features something like **5** different overloaded operators. What's each of those operations doing? It can help to know the answer when things start going wrong.
+
+##### Curious how it all works?
+Have you ever called *help( )* or *dir( )* on an object and wondered what the heck all those names with the double-underscores were?
+
+``# 27 in the lesson7.py exercise``
+
+This turns out to be directly related to operator overloading.
+
+When Python programmers want to define how operators behave on their types, they do so by implementing methods with special names beginning and ending with 2 underscores such as *__lt__*, *__setattr__*, or *__contains__*. Generally, names that follow this double-underscore format have a special meaning to Python.
+
+So, for example, the expression *x in [1, 2, 3]* is actually calling the list method *__ contains __* behind-the-scenes. It's equivalent to (the much uglier) *[1, 2, 3].__ contains __(x)*.
+
+If you're curious to learn more, you can check out [Python's official documentation](https://docs.python.org/3.4/reference/datamodel.html#special-method-names), which describes many, many more of these special "underscores" methods.
+
+We won't be defining our own types in these lessons (if only there was time!), but I hope you'll get to experience the joys of defining your own wonderful, weird types later down the road.
