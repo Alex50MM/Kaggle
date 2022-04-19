@@ -855,10 +855,6 @@ To read a full inventory of dictionaries' methods, click the "output" button bel
 
 Imports, operator overloading, and survival tips for venturing into the world of external libraries
 
-#### Imports
-
-Python has a type of variable called *bool*. It has two possible values: *True* and *False*.
-
 In this tutorial, you will learn about **imports** in Python, get some tips for working with unfamiliar libraries (and the objects they return), and dig into **operator overloading**.
 
 #### Imports
@@ -890,7 +886,7 @@ Of course, if we don't know what *math.log* does, we can call *help( )* on it:
 
 ``# 5 in the lesson7.py exercise``
 
-We can also call *help( )* on the module itself. This will give us the combined documentation for all the functions and values in the module (as well as a high-level description of the module). Click the "output" button to see the whole *math* help page.
+We can also call *help( )* on the module itself. This will give us the combined documentation for all the functions and values in the module (as well as a high-level description of the module).
 
 ``# 6 in the lesson7.py exercise``
 
@@ -909,7 +905,7 @@ Wouldn't it be great if we could refer to all the variables in the *math* module
 
 ``# 9 in the lesson7.py exercise``
 
-import * makes all the module's variables directly accessible to you (without any dotted prefix).
+*import ** makes all the module's variables directly accessible to you (without any dotted prefix).
 
 Bad news: some purists might grumble at you for doing this.
 
@@ -977,7 +973,7 @@ But what about...
 
 ``# 21 in the lesson7.py exercise``
 
-We might think that Python strictly polices how pieces of its core syntax behave such as *+*, *<*, *in*, *==*, or square brackets for indexing and slicing. But in fact, it takes a very hands-off approach. When you define a new type, you can choose how addition works for it, or what it means for an object of that type to be equal to something else.
+We might think that Python strictly polices how pieces of its core syntax behave such as *+*, < , *in*, *==*, or square brackets for indexing and slicing. But in fact, it takes a very hands-off approach. When you define a new type, you can choose how addition works for it, or what it means for an object of that type to be equal to something else.
 
 The designers of lists decided that adding them to numbers wasn't allowed. The designers of *numpy* arrays went a different way (adding the number to each element of the array).
 
